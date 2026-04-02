@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #fbcfe8, #f9a8d4);
+  margin: 0;
+}
+
+/* card */
+.card {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-top: 5px solid #ec4899; /* aksen pink */
+}
+
+/* judul */
+h2 {
+  text-align: center;
+  color: #db2777;
+  margin-bottom: 15px;
+}
+
+/* isi */
+p {
+  margin: 8px 0;
+  padding: 6px 10px;
+  border-radius: 6px;
+  background-color: #fdf2f8;
+  color: #444;
+  transition: 0.3s;
+}
+
+/* hover */
+p:hover {
+  background-color: #fbcfe8;
+}
+
+/* label */
+span {
+  font-weight: bold;
+  color: #be185d;
+}

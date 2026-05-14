@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Poppins';
+    src: url('/fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('/fonts/PlayfairDisplay-Bold.ttf');
+}
+
+@theme {
+    /* Font Sesuai Desain Travello / VetCare */
+    --font-poppins: "Poppins", sans-serif;
+    --font-playfair: "Playfair Display", serif;
+
+    /* Penyesuaian Warna Berdasarkan Gambar Desain Travello */
+    --color-primary: #1679ab;       /* Biru Laut / Teal (Tombol Utama, Icon, Active Link) */
+    --color-primary-hover: #115b82; /* Biru Gelap (Untuk efek hover pada tombol) */
+    --color-accent: #38bdf8;        /* Biru Muda (Untuk tag layanan/badge) */
+    
+    --color-latar: #f8f9fa;         /* Abu-abu sangat muda (Background section seperti Upcoming Offers) */
+    --color-card: #ffffff;          /* Putih (Background Cards) */
+    
+    --color-teks: #1f2937;          /* Abu-abu sangat gelap (Judul/Text utama agar tidak terlalu hitam pekat) */
+    --color-teks-samping: #6b7280;  /* Abu-abu medium (Sub-item/Deskripsi kecil) */
+    --color-garis: #e5e7eb;         /* Garis pemisah/border card */
+}
+
+@layer base {
+  body {
+    @apply bg-latar text-teks font-poppins antialiased;
+  }
+  
+  /* Menerapkan font Serif elegan untuk judul seperti "Explore, Dream, Travel" */
+  h1, h2, h3, .font-serif {
+    @apply font-playfair tracking-wide;
+  }
+
+  /* Custom Scrollbar agar mirip desain modern */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+  }
+}
+
+@layer components {
+  /* Helper class untuk tombol biru utama agar tidak perlu ngetik panjang-panjang di JSX */
+  .btn-primary {
+    @apply bg-primary text-white px-6 py-2 rounded-full font-medium hover:bg-primary-hover transition-all duration-300;
+  }
+
+  /* Helper class untuk card putih dengan shadow lembut */
+  .card-layanan {
+    @apply bg-card rounded-3xl p-4 shadow-sm hover:shadow-lg transition-shadow duration-300;
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "offers": [
+    {
+      "id": 1,
+      "title": "Miami Beaches",
+      "image": "https://images.unsplash.com/photo-1514214246283-d427a95c5d2f?auto=format&fit=crop&w=500&q=80",
+      "tag": "Chill",
+      "duration": "2 Days, 1 Nights",
+      "date": "20.5.2023",
+      "price": "850$"
+    },
+    {
+      "id": 2,
+      "title": "Japan",
+      "image": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=500&q=80",
+      "tag": "Relax",
+      "duration": "2 Days, 1 Nights",
+      "date": "20.5.2023",
+      "price": "1200$"
+    },
+    {
+      "id": 3,
+      "title": "Dubai",
+      "image": "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=500&q=80",
+      "tag": "Chill",
+      "duration": "2 Days, 1 Nights",
+      "date": "20.5.2023",
+      "price": "500$"
+    },
+    {
+      "id": 4,
+      "title": "Taj-Mahal",
+      "image": "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=500&q=80",
+      "tag": "Relax",
+      "duration": "2 Days, 1 Nights",
+      "date": "20.5.2023",
+      "price": "350$"
+    }
+  ]
+}

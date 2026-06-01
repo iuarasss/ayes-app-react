@@ -1,17 +1,19 @@
-import React from 'react';
-import { Outlet } from 'react-router-dom';
-import Navbar from '../components/Sidebar';
-// import Footer from '../components/Footer';
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Sidebar from "../components/Sidebar";
 
 const MainLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-gray-50">
-      <Navbar />
-      {/* Outlet adalah tempat render halaman anak (child routes) */}
-      <main className="flex-grow">
+    <div className="min-h-screen bg-gray-50">
+
+      {/* Sidebar */}
+      <Sidebar />
+
+      {/* Content */}
+      <main className="ml-64 p-8">
         <Outlet />
       </main>
-      {/* <Footer /> */}
+
     </div>
   );
 };

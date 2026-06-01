@@ -8,6 +8,7 @@ import {
   Settings,
   Users,
   BarChart3,
+  Boxes
 } from "lucide-react";
 
 const Sidebar = () => {
@@ -57,6 +58,11 @@ const Sidebar = () => {
           Analytics
         </NavLink>
       </div>
+
+      <NavLink to="/components" className={menuClass}>
+        <Boxes size={18} />
+        Components
+      </NavLink>
 
       {/* Bottom */}
       <div className="mt-auto">

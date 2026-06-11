@@ -11,7 +11,7 @@ const Dashboard = lazy(() => import('./pages/Dashboard'));
 const Booking = lazy(() => import('./pages/Booking'));
 const Components = lazy(() => import("./pages/Components"));
 const NotFound = lazy(() => import('./pages/NotFound'));
-
+const Customers = lazy(() => import("./pages/Customers"));
 // Auth Pages
 const Login = lazy(() => import('./pages/auth/Login'));
 const Register = lazy(() => import('./pages/auth/Register'));
@@ -28,6 +28,7 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="booking" element={<Booking />} />
+            <Route path="customers" element={<Customers />} />
             <Route path="/components" element={<Components />} />
           </Route>
 

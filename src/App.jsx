@@ -17,6 +17,7 @@ const Login = lazy(() => import("./pages/auth/Login"));
 const Register = lazy(() => import("./pages/auth/Register"));
 const ForgotPassword = lazy(() => import("./pages/auth/ForgotPassword"));
 const Members = lazy(() => import("./pages/member/Member"));
+const Guest = lazy(() => import("./pages/guest/Guest"));
 function App() {
   return (
     <Router>
@@ -31,6 +32,7 @@ function App() {
           </Route>
 
           <Route path="member" element={<Members />} />
+          <Route path="/guest" element={<Guest />} />
 
           {/* Auth Layout */}
           <Route path="/auth" element={<AuthLayout />}>

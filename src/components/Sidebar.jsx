@@ -23,7 +23,7 @@ const Sidebar = () => {
     <div className="w-64 h-screen bg-white border-r border-gray-200 fixed left-0 top-0 p-5 flex flex-col">
       {/* Logo */}
       <div className="mb-10 flex justify-center">
-        <h1 className="text-2xl font-bold text-[#6C63FF]">Travel Agent</h1>
+        <h1 className="text-2xl font-bold text-[#6C63FF]">Tripora.</h1>
       </div>
 
       {/* Menu */}

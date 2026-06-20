@@ -1,26 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 
 const Dashboard = () => {
+
+  // STATE UNTUK MENYIMPAN DATA DASHBOARD
+  const [dashboardData, setDashboardData] = useState({
+    totalBooking: "$0",
+    revenue: "$0",
+    customers: "$0",
+    packages: "$0",
+  });
+
+
+  // USE EFFECT UNTUK MENGAMBIL DATA SAAT DASHBOARD DIBUKA
+  useEffect(() => {
+
+    const loadDashboardData = () => {
+
+      // simulasi data dari API/database
+      const data = {
+        totalBooking: "$24,500",
+        revenue: "$18,680",
+        customers: "$50,680",
+        packages: "$16,590",
+      };
+
+
+      setDashboardData(data);
+
+    };
+
+
+    loadDashboardData();
+
+  }, []);
+
+
   const stats = [
     {
       title: "Total Booking",
-      value: "$24,500",
+      value: dashboardData.totalBooking,
     },
     {
       title: "Revenue",
-      value: "$18,680",
+      value: dashboardData.revenue,
     },
     {
       title: "Customers",
-      value: "$50,680",
+      value: dashboardData.customers,
     },
     {
       title: "Packages",
-      value: "$16,590",
+      value: dashboardData.packages,
     },
   ];
+
 
   const bookings = [
     {
@@ -45,23 +80,22 @@ const Dashboard = () => {
     },
   ];
 
+
   return (
     <div className="bg-[#f5f7fb] min-h-screen">
-      {/* Sidebar */}
+
       <Sidebar />
 
-      {/* Main Content */}
 
       <main
         className="
-        
         px-4
         sm:px-6
         lg:px-8
         py-6
         "
       >
-        {/* Topbar */}
+
 
         <div
           className="
@@ -74,10 +108,13 @@ const Dashboard = () => {
           mb-8
           "
         >
-          {/* Title */}
 
           <div>
-            <p className="text-sm text-gray-400">My View</p>
+
+            <p className="text-sm text-gray-400">
+              My View
+            </p>
+
 
             <h1
               className="
@@ -88,9 +125,10 @@ const Dashboard = () => {
             >
               Dashboard
             </h1>
+
           </div>
 
-          {/* Right Section */}
+
 
           <div
             className="
@@ -102,6 +140,7 @@ const Dashboard = () => {
             gap-4
             "
           >
+
             <Link
               to="/auth/login"
               className="
@@ -118,6 +157,7 @@ const Dashboard = () => {
             >
               Login
             </Link>
+
 
             <input
               type="text"
@@ -136,6 +176,7 @@ const Dashboard = () => {
               "
             />
 
+
             <img
               src="https://i.pravatar.cc/40"
               alt="profile"
@@ -147,8 +188,13 @@ const Dashboard = () => {
               sm:mx-0
               "
             />
+
+
           </div>
+
         </div>
+
+
 
         {/* Statistic Cards */}
 
@@ -162,16 +208,21 @@ const Dashboard = () => {
           mb-8
           "
         >
-          {stats.map((item, index) => (
+
+
+          {stats.map((item,index)=>(
+
             <div
               key={index}
               className="
-                bg-white
-                p-5
-                rounded-2xl
-                shadow-sm
-                "
+              bg-white
+              p-5
+              rounded-2xl
+              shadow-sm
+              "
             >
+
+
               <p
                 className="
                 text-sm
@@ -182,36 +233,47 @@ const Dashboard = () => {
                 {item.title}
               </p>
 
+
               <h2
                 className="
-                  text-2xl
-                  font-bold
-                  text-gray-800
-                  "
+                text-2xl
+                font-bold
+                text-gray-800
+                "
               >
                 {item.value}
               </h2>
 
+
               <div
                 className="
-                  mt-4
-                  h-2
-                  bg-gray-100
-                  rounded-full
-                  overflow-hidden
-                  "
+                mt-4
+                h-2
+                bg-gray-100
+                rounded-full
+                overflow-hidden
+                "
               >
+
                 <div
                   className="
-                    w-2/3
-                    bg-[#6C63FF]
-                    h-full
-                    "
+                  w-2/3
+                  bg-[#6C63FF]
+                  h-full
+                  "
                 />
+
               </div>
+
+
             </div>
+
+
           ))}
+
+
         </div>
+
 
         {/* Content */}
 
@@ -223,6 +285,8 @@ const Dashboard = () => {
           gap-6
           "
         >
+
+
           {/* Pending Task */}
 
           <div
@@ -233,6 +297,7 @@ const Dashboard = () => {
             shadow-sm
             "
           >
+
             <h3
               className="
               font-semibold
@@ -243,7 +308,10 @@ const Dashboard = () => {
               Pending Task
             </h3>
 
+
             <div className="space-y-5">
+
+
               <div
                 className="
                 border
@@ -252,25 +320,16 @@ const Dashboard = () => {
                 p-4
                 "
               >
-                <p
-                  className="
-                text-sm
-                text-gray-400
-                mb-2
-                "
-                >
+
+                <p className="text-sm text-gray-400 mb-2">
                   Pending Approval
                 </p>
 
-                <h2
-                  className="
-                  text-2xl
-                  font-bold
-                  text-[#6C63FF]
-                  "
-                >
+
+                <h2 className="text-2xl font-bold text-[#6C63FF]">
                   $1,200.00
                 </h2>
+
 
                 <button
                   className="
@@ -284,7 +343,10 @@ const Dashboard = () => {
                 >
                   Approve
                 </button>
+
               </div>
+
+
 
               <div
                 className="
@@ -294,25 +356,16 @@ const Dashboard = () => {
                 p-4
                 "
               >
-                <p
-                  className="
-                  text-sm
-                  text-gray-400
-                  mb-2
-                  "
-                >
+
+                <p className="text-sm text-gray-400 mb-2">
                   Unreported Advances
                 </p>
 
-                <h2
-                  className="
-                  text-2xl
-                  font-bold
-                  text-[#6C63FF]
-                  "
-                >
+
+                <h2 className="text-2xl font-bold text-[#6C63FF]">
                   $2,132.00
                 </h2>
+
 
                 <button
                   className="
@@ -326,9 +379,19 @@ const Dashboard = () => {
                 >
                   Details
                 </button>
+
+
               </div>
+
+
             </div>
+
+
           </div>
+
+
+
+
 
           {/* Booking Table */}
 
@@ -341,91 +404,106 @@ const Dashboard = () => {
             shadow-sm
             "
           >
-            <h3
-              className="
-              font-semibold
-              text-lg
-              mb-6
-              "
-            >
+
+
+            <h3 className="font-semibold text-lg mb-6">
               Recent Booking
             </h3>
 
+
+
             <div className="overflow-x-auto">
-              <table
-                className="
-                min-w-[600px]
-                w-full
-                "
-              >
+
+
+              <table className="min-w-[600px] w-full">
+
+
                 <thead>
-                  <tr
-                    className="
-                    text-left
-                    text-gray-400
-                    text-sm
-                    border-b
-                    "
-                  >
-                    <th className="pb-3">Package</th>
 
-                    <th className="pb-3">Status</th>
+                  <tr className="text-left text-gray-400 text-sm border-b">
 
-                    <th className="pb-3">Price</th>
+
+                    <th className="pb-3">
+                      Package
+                    </th>
+
+
+                    <th className="pb-3">
+                      Status
+                    </th>
+
+
+                    <th className="pb-3">
+                      Price
+                    </th>
+
+
                   </tr>
+
                 </thead>
 
+
+
                 <tbody>
-                  {bookings.map((item, index) => (
+
+
+                  {bookings.map((item,index)=>(
+
+
                     <tr
                       key={index}
-                      className="
-                      border-b
-                      last:border-none
-                      "
+                      className="border-b last:border-none"
                     >
-                      <td
-                        className="
-                        py-4
-                        font-medium
-                        text-gray-700
-                        "
-                      >
+
+                      <td className="py-4 font-medium text-gray-700">
                         {item.name}
                       </td>
 
+
                       <td
-                        className={`
-                        py-4
-                        font-medium
-                        ${
+                        className={`py-4 font-medium ${
                           item.status === "Success"
-                            ? "text-green-500"
-                            : "text-yellow-500"
-                        }
-                        `}
+                          ? "text-green-500"
+                          : "text-yellow-500"
+                        }`}
                       >
                         {item.status}
                       </td>
 
-                      <td
-                        className="
-                      py-4
-                      text-gray-700
-                      "
-                      >
+
+                      <td className="py-4 text-gray-700">
                         {item.price}
                       </td>
+
+
                     </tr>
+
+
                   ))}
+
+
                 </tbody>
+
+
               </table>
+
+
             </div>
+
+
           </div>
+
+
+
         </div>
+
+
       </main>
+
+
     </div>
   );
 };
+
 
 export default Dashboard;

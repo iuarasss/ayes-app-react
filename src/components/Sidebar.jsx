@@ -2,13 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import {
   LayoutDashboard,
-  Plane,
-  Receipt,
-  FileText,
-  Settings,
   Users,
-  BarChart3,
-  Boxes
+  Ticket,
+  BriefcaseBusiness,
+  CreditCard,
+  Boxes,
 } from "lucide-react";
 
 const Sidebar = () => {
@@ -20,32 +18,61 @@ const Sidebar = () => {
     }`;
 
   return (
-    <div className="w-64 h-screen bg-white border-r border-gray-200 fixed left-0 top-0 p-5 flex flex-col">
-      {/* Logo */}
-      <div className="mb-10 flex justify-center">
-        <h1 className="text-2xl font-bold text-[#6C63FF]">Tripora.</h1>
+    <div
+      className="
+      w-64 h-screen
+      bg-white
+      border-r border-gray-200
+      fixed left-0 top-0
+      px-5 py-6
+      flex flex-col
+    "
+    >
+      {/* LOGO */}
+
+      <div className="px-2 mb-8">
+        <h1
+          className="
+          text-2xl
+          font-bold
+          text-gray-800
+        "
+        >
+          Trip
+          <span className="text-[#6C63FF]">ora</span>.
+        </h1>
+
+        <p
+          className="
+          text-xs
+          text-gray-400
+          mt-1
+        "
+        >
+          Travel Agent Dashboard
+        </p>
       </div>
 
-      {/* Menu */}
-      <div className="flex flex-col gap-2">
+      <div className="border-b mb-5"></div>
+
+      {/* MAIN MENU */}
+
+      <p
+        className="
+        text-[11px]
+        font-semibold
+        text-gray-300
+        px-3
+        mb-3
+      "
+      >
+        MAIN MENU
+      </p>
+
+      <div className="flex flex-col gap-1">
         <NavLink to="/" className={menuClass}>
           <LayoutDashboard size={18} />
           Dashboard
-        </NavLink>
-
-        <NavLink to="/trips" className={menuClass}>
-          <Plane size={18} />
-          Trips
-        </NavLink>
-
-        <NavLink to="/booking" className={menuClass}>
-          <Receipt size={18} />
-          Booking
-        </NavLink>
-
-        <NavLink to="/reports" className={menuClass}>
-          <FileText size={18} />
-          Reports
         </NavLink>
 
         <NavLink to="/customers" className={menuClass}>
@@ -53,23 +80,113 @@ const Sidebar = () => {
           Customers
         </NavLink>
 
-        <NavLink to="/analytics" className={menuClass}>
-          <BarChart3 size={18} />
-          Analytics
+        <NavLink to="/bookings" className={menuClass}>
+          <Ticket size={18} />
+          Bookings
+        </NavLink>
+
+        <NavLink to="/tour-packages" className={menuClass}>
+          <BriefcaseBusiness size={18} />
+          Tour Packages
+        </NavLink>
+
+        <NavLink to="/payments" className={menuClass}>
+          <CreditCard size={18} />
+          Payments
+        </NavLink>
+
+        <NavLink to="/admin/users" className={menuClass}>
+          <Users size={18} />
+          Users
         </NavLink>
       </div>
+
+      {/* DEVELOPER */}
+
+      <p
+        className="
+        text-[11px]
+        font-semibold
+        text-gray-300
+        px-3
+        mt-8
+        mb-3
+      "
+      >
+        DEVELOPER
+      </p>
 
       <NavLink to="/components" className={menuClass}>
         <Boxes size={18} />
         Components
       </NavLink>
 
-      {/* Bottom */}
+      {/* PROMO CARD */}
+
       <div className="mt-auto">
-        <NavLink to="/settings" className={menuClass}>
-          <Settings size={18} />
-          Settings
-        </NavLink>
+        <div
+          className="
+          bg-[#6C63FF]
+          rounded-2xl
+          p-5
+          text-white
+          mb-5
+        "
+        >
+          <p
+            className="
+            text-sm
+            leading-relaxed
+            font-medium
+          "
+          >
+            Discover new tour
+            <br />
+            packages and grow
+            <br />
+            your travel business!
+          </p>
+
+          <div
+            className="
+            flex
+            items-center
+            justify-between
+            mt-4
+          "
+          >
+            <NavLink
+              to="/tour-packages/create"
+              className="
+                bg-white
+                text-[#6C63FF]
+                px-4
+                py-2
+                rounded-xl
+                text-xs
+                font-semibold
+                hover:bg-gray-100
+                transition
+              "
+            >
+              + Add Package
+            </NavLink>
+          </div>
+        </div>
+
+        {/* FOOTER */}
+
+        <div
+          className="
+          text-center
+          text-xs
+          text-gray-400
+        "
+        >
+          <p>Tripora Admin Dashboard</p>
+
+          <p className="mt-1">© 2025 All Right Reserved</p>
+        </div>
       </div>
     </div>
   );

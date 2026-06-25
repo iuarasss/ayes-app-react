@@ -12,12 +12,15 @@ const Booking = lazy(() => import("./pages/Booking"));
 const Components = lazy(() => import("./pages/Components"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const Customers = lazy(() => import("./pages/Customers"));
+
 // Auth Pages
 const Login = lazy(() => import("./pages/auth/Login"));
 const Register = lazy(() => import("./pages/auth/Register"));
 const ForgotPassword = lazy(() => import("./pages/auth/ForgotPassword"));
 const Members = lazy(() => import("./pages/member/Member"));
 const Guest = lazy(() => import("./pages/guest/Guest"));
+const Users = lazy(() => import("./pages/admin/Users"));
+
 function App() {
   return (
     <Router>
@@ -28,11 +31,12 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path="booking" element={<Booking />} />
             <Route path="customers" element={<Customers />} />
-            <Route path="/components" element={<Components />} />
+            <Route path="components" element={<Components />} />
+            <Route path="admin/users" element={<Users />} />
           </Route>
 
           <Route path="member" element={<Members />} />
-          <Route path="/guest" element={<Guest />} />
+          <Route path="guest" element={<Guest />} />
 
           {/* Auth Layout */}
           <Route path="/auth" element={<AuthLayout />}>
